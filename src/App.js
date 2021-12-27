@@ -1,4 +1,5 @@
 import './App.css';
+import { GlobalProvider } from './context/GlobalState';
 import { Header } from './components/Header';
 import { Balance } from './components/Balance';
 import { Overview } from './components/Overview';
@@ -8,15 +9,17 @@ import { AddTransaction } from './components/AddTransaction';
 function App() {
   return (
     <div className="App py-5">
-      <Header />
+      <GlobalProvider>
+        <Header />
 
-      <Balance />
+        <Balance />
 
-      <Overview />
+        <Overview />
 
-      <History />
+        <History />
 
-      <AddTransaction />
+        <AddTransaction />
+      </GlobalProvider>
     </div>
   );
 }
